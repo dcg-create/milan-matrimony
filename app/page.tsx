@@ -233,7 +233,7 @@ export default function Home() {
           </button>
 
           {user ? (
-            <button className="avatar" onClick={logout}>
+            <button className="avatar" onClick={() => setTab('profile')}>
               {(
                 user.user_metadata?.full_name ||
                 user.email ||
