@@ -302,7 +302,38 @@ export default function Home() {
           </div>
         </div>
       </section>
+{tab === 'profile' && (
+  <section className="content">
+    <div className="section-head">
+      <div>
+        <span className="eyebrow">YOUR MILAN PROFILE</span>
+        <h2>Your profile</h2>
+        <p>Manage the details people see when they discover you.</p>
+      </div>
+    </div>
 
+    <div className="profile-panel">
+      <h3>{user?.user_metadata?.full_name || user?.email || 'Your profile'}</h3>
+      <p>{user?.email}</p>
+
+      <button
+        className="primary"
+        onClick={() => setTab('discover')}
+      >
+        Back to Discover
+      </button>
+
+      <button
+        className="secondary"
+        onClick={logout}
+      >
+        Log out
+      </button>
+    </div>
+  </section>
+)}
+
+<section id="discover" className="content">
       <section id="discover" className="content">
         <div className="sectionHead">
           <div>
