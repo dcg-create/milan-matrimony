@@ -70,7 +70,7 @@ export default function Home() {
 
   const [query, setQuery] = useState('');
   const [liked, setLiked] = useState<string[]>([]);
-  const [tab, setTab] = useState<'discover' | 'interests'>('discover');
+  const [tab, setTab] = useState<'discover' | 'interests' | 'profile'>('discover');
 
   const [profile, setProfile] = useState({
     full_name: '',
@@ -272,11 +272,11 @@ export default function Home() {
 
           <div className="heroActions">
             <button
-              className="primary"
-              onClick={openProfile}
-            >
-              Create your profile
-            </button>
+  className="primary"
+  onClick={() => user ? setTab('profile') : setShowLogin(true)}
+>
+  Create your profile
+</button>
 
             <button
               className="secondary"
